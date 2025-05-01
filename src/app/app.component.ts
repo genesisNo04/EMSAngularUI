@@ -4,10 +4,11 @@ import {EmployeeListComponent} from './employee-list/employee-list.component';
 
 @Component({
   selector: 'app-root',
-  imports: [EmployeeListComponent],
+  imports: [RouterOutlet, EmployeeListComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
+
 export class AppComponent {
   title = 'angular-frontend';
 }
