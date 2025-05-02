@@ -17,11 +17,6 @@ export class CreateEmployeeComponent {
   constructor(private employeeService: EmployeeService, private router: Router) {}
 
   saveEmployee() {
-    if (!this.employeeService || !this.employeeService.createEmployee) {
-      console.error("EmployeeService is undefined or createEmployee method is missing!");
-      return;
-    }
-
     this.employeeService.createEmployee(this.employee).subscribe(data => {
       console.log(data);
       this.goToEmployeeList();
