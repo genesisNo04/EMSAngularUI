@@ -6,6 +6,7 @@ import {Employee} from './employee';
 @Injectable({
   providedIn: 'root'
 })
+
 export class EmployeeService {
 
   private baseURL = "http://localhost:8080/api/v1/employees";
@@ -14,5 +15,9 @@ export class EmployeeService {
   
   getEmployeesList(): Observable<Employee[]>{
     return this.httpClient.get<Employee[]>(`${this.baseURL}`);
+  }
+
+  createEmployee(employee: Employee): Observable<Employee> {
+    return this.httpClient.post<Employee>(`${this.baseURL}`, employee);
   }
 }
